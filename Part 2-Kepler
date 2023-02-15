@@ -1,13 +1,32 @@
-
-
-
-
-
-
-
 Generating Distance from Kepler-62 ("a" in AU), Eccentricity ("e"), and Inclination ("i") Graphs:
 First step is to import matplotlib.pyplot, which allows us to make these graphs using python
     
     import matplotlib.pyplot as plt
 
-Next is to use rebound.SimulationArchive to assist in 
+Next is to use rebound.SimulationArchive as a simulation software
+The Simulation Archive takes snapshots of the simulation and generates them to analyze
+This set of code allows us to store snapshots from Simulation Archive into "sa", and print this information for us to analyze
+    
+    sa = rebound.SimulationArchive("archive.bin")
+    
+Next we establish graph and axis characteristics for the graphs we are making
+This includes figure size, pixels/dots per inch (dpi)
+(More info maybe needed)
+
+    fig = plt.figure(figsize=(5,5),dpi=150)
+    ax1 = fig.add_subplot(311)
+    ax2 = fig.add_subplot(312)
+    ax3 = fig.add_subplot(313)
+    ax_list = [ax1,ax2,ax3]
+    
+We assign each element/planet represented in the graph with a color, preferably the same color listed in the orbit model above
+We set the font size ("fs") to 'large' which has a predefined value associated with it (Dr. Quarles said it was good for NASA, so it's good for us lmao)
+
+    color = ['orange','b','r','g','c','m']
+    fs = 'large'
+
+The most complicated part of this section of code is the for loop, but we will break it down
+We establish the for loop with basic python notation, giving it the name j (basic python notation is naming loops either i, j, k, and so on, with i being the outermost loop)
+Loop will loop from 0 to n+1 times, for instance, if looping from 0 to 2, you will put (0,3)
+Label sa[j] as "sim" (more info needed)
+Move the star Kepler-62 to the center of the simulation we are analyzing using sim.move_to_hel() (why in graph we need this tho...)
