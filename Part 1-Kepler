@@ -1,0 +1,13 @@
+In order to accurately input the Earth, Kepler star, and all of the kepler planets, we would need to add the components of each object. 
+The "M" is mass, while the "e" is the code name for Earth. It is quite simple for the system to understand.
+The input would look like this:
+  M_e = 3.0035e-6
+A good code name for the Kepler star would be "star_K62." We will also input the mass, which looks like this:
+  Mstar_K62 = 0.69
+Since we are more focused on the planets, we would need to add more components into the system. 
+The components we need to add are semimajor axis, eccentricity, inclination, omega, Omega, mean anomaly, and the mass in comparison to the Sun. The input:
+  K62b = [0.0552802,0.07071068,0.883,278.13010,90.373788,74.589661,2.71*M_e] #(semimajor axis, ecc, inclination, omega, Omega, Mean Anomaly, mass in M_sun)
+  K62c = [0.0928576,0.08602325,0.560,54.462322,90.473841,327.80383578,0.128*M_e]
+  K62d = [0.1195013,0.09486833,0.300,288.43494,90.002197,243.09602,4.94*M_e]
+  K62e = [0.4263096,0.13000000,0.303,292.61986,90.303058,63.220181,4.05*M_e]
+  K62f = [0.7176171,0.09433981,0.488,57.994616,90.478155,176.54639,3.57*M_e]
