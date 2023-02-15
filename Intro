@@ -1,1 +1,2 @@
-
+First, we would need to import numpy as np. Meaning, the system will import all the numpy modules and you can use them as np. 
+After that, we would need to import rebound. Rebound is a command tool that instantly fetches Stack Overflow results when an exception is thrown. 
