@@ -25,4 +25,11 @@ many times again. All of the planets have code names for which the system can un
 
 
 A rebound simulation is the first rebound simulation. It means you are ready to run the simulation. First, in order to do that, you would need ot clarify the units you will
-be using and the integrator. The system integrator integrates discrete systems utilizing a variety of techniques. 
+be using and the integrator. The system integrator integrates discrete systems utilizing a variety of techniques. Our input will look like this:
+  sim = rebound.Simulation()
+  sim.integrator = 'whfast'
+  sim.units = {'yr','Msun','AU'}
+WHFast, a fast and unbiased symplectic Wisdom-Holman integrator. 
+This integrator is well suited for integrations of planetary systems in which the planets stay roughly on their orbits. 
+If close encounters and collisions occur, then WHFast is not the right integrator.  
+
