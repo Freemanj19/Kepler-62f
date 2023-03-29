@@ -1,2 +1,31 @@
 First, we would need to install all the properties for this next task.
 
+
+The other properties are very familiar except for two. The UnivariateSpline function is used for interpolation of 1-D data, while odeint is used to solve ordinary differential equations (ODEs) numerically.
+
+It is best to note that the hashtags are comments imported into the code. 
+
+Next, we would need to code in a directory method to make sure we have it locked in. Our new directory name is "K62_orb."
+
+
+Here is what we know:
+The threading.Lock() method creates a new lock object that can be used to synchronize access to a shared resource
+
+The os.getcwd() method returns the current working directory as a string, which is then concatenated with a forward slash ("/") to create the home variable.
+
+The os.path.exists(data_dir) method checks if a directory named "K62_orb" already exists in the current working directory, and if it doesn't, the os.makedirs(data_dir) method creates it.
+
+This coding helps insure that our directory is in the works before we store any data in it. So now that our directory name is in place, we can re-code our inputs of each celestial body. 
+
+Everything looks familiar except R_p. This function lists the five radii in terms of the radius of Earth. These values can be found by multiplying a scalar value by R_e. 
+
+Next, we need to add in code to calculate the orbital period of K62. 
+
+Using the expression P_K62b = np.sqrt(K62b[0]**3/Mstar_K62)*365.25, where K62b[0] is the semi-major axis of the orbit and Mstar_K62 is the mass of the central star, we are able to calculate the orbital period. The result is then converted from years to days by multiplying it by 365.25. We will label the value as "P_K62f".
+
+
+This code defines a time scale tscale for an N-body simulation as 1e5 times the number of days in a year (365.25), which corresponds to 100,000 years.
+
+The next line of code calculates the output interval for the simulation by multiplying the orbital period of the astronomical object K62f by the number of days in a year (365.25), and rounding the result to 3 decimal places using the np.round() function. The result is stored in the variable out_int.
+
+The final line of code generates an array days representing the time steps for the simulation, using the np.arange() function. The function creates an array starting from 0, incrementing by out_int, and stopping at tscale + out_int. The + out_int ensures that the last time step is included in the array.
